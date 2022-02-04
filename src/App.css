@@ -1,1 +1,82 @@
-/* Other rules */
+body {
+  font-family: "Montserrat";
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter button {
+  margin: 30px;
+  border: none;
+  background-color: white;
+  font-size: 82px;
+}
+
+.counter p {
+  background-color: #5c48d3;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 96px;
+  border-radius: 15px;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.middle > button {
+  border: none;
+  background-color: #5c48d3;
+  width: 150px;
+  height: 60px;
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.icon {
+  margin-left: 111px;
+}
+
+.title {
+  font-size: 48px;
+  margin-left: 60px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 200px;
+}
+
+.footer a {
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+  margin-top: 200px;
+}
