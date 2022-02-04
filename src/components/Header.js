@@ -9,7 +9,7 @@ const Header = () => {
         icon="stopwatch"
         size="5x"
       />
-      <p className="title">React Counter</p>
+      <p className="title">React Counter v2</p>
     </div>
   );
 };

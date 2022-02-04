@@ -1,7 +1,6 @@
 import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header";
-import Array from "./components/Array";
 import Counter from "./components/Counter";
 import Footer from "./components/Footer";
 
@@ -10,22 +9,31 @@ import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
 library.add(faStopwatch);
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState([0]);
   const handleClick = () => {
     const newCounter = [...counter];
+    newCounter.push(0);
     setCounter(newCounter);
+    console.log(newCounter);
   };
   return (
     <div className="App">
       <Header />
-      <div>
+      <div className="middle">
         <button onClick={handleClick}>Add counter</button>
-        {tab.map((item, index) => {
-          return <Counter add={(item, index)} />;
+        {counter.map((item, index) => {
+          return (
+            <Counter
+              counter={counter}
+              setCounter={setCounter}
+              value={item}
+              index={index}
+            />
+          );
         })}
+
+        <Footer />
       </div>
-      <Counter counter={counter} setCounter={setCounter} />
-      <Footer />
     </div>
   );
 }

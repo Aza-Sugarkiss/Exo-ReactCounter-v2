@@ -1,13 +1,25 @@
-const Counter = ({ counter, setCounter }) => {
+const Counter = ({ counter, setCounter, value, index }) => {
   return (
     <div className="middle">
       <div className="counter">
-        {counter > 0 && (
-          <button onClick={() => setCounter(counter - 1)}>-</button>
+        {value > 0 && (
+          <button
+            onClick={() => {
+              setCounter(counter[index] - 1);
+            }}
+          >
+            -
+          </button>
         )}
-        <p>{counter}</p>
-        {counter < 10 && (
-          <button onClick={() => setCounter(counter + 1)}>+</button>
+        <p>{value}</p>
+        {value < 10 && (
+          <button
+            onClick={() => {
+              setCounter(counter[index] + 1);
+            }}
+          >
+            +
+          </button>
         )}
       </div>
       <button onClick={() => setCounter(0)}>Reset</button>
