@@ -1,28 +1,32 @@
-const Counter = ({ counter, setCounter, value, index }) => {
+const Counter = ({ counter, more, less, reset }) => {
   return (
-    <div className="middle">
-      <div className="counter">
-        {value > 0 && (
+    <div>
+      <div className="counter-copies">
+        {counter > 0 && (
           <button
+            className="more-less"
             onClick={() => {
-              setCounter(counter[index] - 1);
+              more();
             }}
           >
             -
           </button>
         )}
-        <p>{value}</p>
-        {value < 10 && (
+        <p className="counter">{counter}</p>
+        {counter < 10 && (
           <button
+            className="counter-copies"
             onClick={() => {
-              setCounter(counter[index] + 1);
+              less();
             }}
           >
             +
           </button>
         )}
       </div>
-      <button onClick={() => setCounter(0)}>Reset</button>
+      <button className="reset" onClick={reset()}>
+        Reset
+      </button>
     </div>
   );
 };

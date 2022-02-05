@@ -9,31 +9,45 @@ import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
 library.add(faStopwatch);
 
 function App() {
-  const [counter, setCounter] = useState([0]);
+  const [counters, setCounters] = useState([0]);
   const handleClick = () => {
-    const newCounter = [...counter];
-    newCounter.push(0);
-    setCounter(newCounter);
-    console.log(newCounter);
+    const newCounters = [...counters];
+    newCounters.push(0);
+    setCounters(newCounters);
+    console.log(newCounters);
   };
   return (
     <div className="App">
       <Header />
       <div className="middle">
         <button onClick={handleClick}>Add counter</button>
-        {counter.map((item, index) => {
-          return (
-            <Counter
-              counter={counter}
-              setCounter={setCounter}
-              value={item}
-              index={index}
-            />
-          );
-        })}
-
-        <Footer />
+        <div className="counters">
+          {counters.map((counter, index) => {
+            return (
+              index < 3 && (
+                <div>
+                  {
+                    <Counter
+                      counter={counter}
+                      more={() => {
+                        counter + 1;
+                      }}
+                      less={() => {
+                        counter - 1;
+                      }}
+                      reset={() => {
+                        counter - 1 * counter;
+                      }}
+                      index={index}
+                    />
+                  }
+                </div>
+              )
+            );
+          })}
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }
